@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form>
+      Value 1: <input type="text" id = "value1">
+      Value 2: <input type="text" id = "value2">
+      Operator:
+       <select id = "operator">
+        <option value="add">add</option>
+        <option value="sub">subtract</option>
+        <option value="mul">multiply</option>
+        <option value="div">divide</option>
+      </select>
+      <button type="button" onclick="calc()">
+        calculate
+      </button>
+    </form>
+    <script>
+      function calc() {
+        var a = parseInt(document.querySelector("#value1").value);
+        var b = parseInt(document.querySelector("#value2").value);
+        var op = document.querySelector("#operator").value;
+        var calculate;
+        if(op == "add"){
+          calculate = a + b;
+        }
+        if(op == "sub"){
+          calculate = a - b;
+        }
+        if(op == "mul"){
+          calculate = a * b;
+        }
+        if(op == "div"){
+          calculate = a / b;
+        }
+        document.querySelector("#result").innerHTML = calculate;
+      }
+    </script>
+    <p>Solution: </p>
+    <div id = "result"></div>
+  </body>
+</html>
